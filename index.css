@@ -1,30 +1,35 @@
-*{
-    padding: 0%;
+* {
+    padding: 0;
     margin: 0;
     text-align: center;
+    box-sizing: border-box;
 }
 
-h1{
+h1 {
     color: aqua;
     background-color: black;
     line-height: 5rem;
     height: 5rem;
+    font-size: 2.5rem;
+    width: 100%;
 }
 
-img{
+img {
     height: 150px;
     width: 150px;
     border-radius: 50%;
     object-fit: cover;
-    align-self: center;
+    margin: auto;
 }
 
-.choice{
+.choice {
     height: 165px;
     width: 165px;
     border-radius: 50%;
     display: flex;
-    justify-content: center;  
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
 }
 
 .choice:hover {
@@ -32,80 +37,74 @@ img{
     background-color: black;
 }
 
-.choices{
+.choices {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 3rem;
     margin-top: 5rem;
+    padding: 1rem;
 }
 
-.score-board{
+.score-board {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2rem;
     margin-top: 3rem;
     gap: 3rem;
-
+    flex-wrap: wrap;
 }
 
-#user-score , #comp-score{
+#user-score,
+#comp-score {
     font-size: 4rem;
+}
 
-}
-.msg-container{
+.msg-container {
     margin-top: 5rem;
+    padding: 1rem;
 }
-#msg{
-    margin-top: 5rem;
+
+#msg {
     background-color: black;
-    color:white;
+    color: white;
     font-size: 2rem;
-    display: inline;
+    display: inline-block;
     padding: 1rem;
     border-radius: 1rem;
-}
-/* Make images responsive */
-.choice img {
-  width: 100%;
-  max-width: 100px;
-  height: auto;
+    max-width: 90%;
 }
 
-/* Stack choices vertically on small screens */
 @media (max-width: 600px) {
-  .choices {
-    flex-direction: column;
-    align-items: center;
-  }
-  .choice {
-    margin-bottom: 20px;
-  }
+    h1 {
+        font-size: 1.8rem;
+        line-height: 4rem;
+    }
 
-  .score-board {
-    flex-direction: column;
-    align-items: center;
-  }
+    .choice {
+        height: 120px;
+        width: 120px;
+    }
 
-  h1 {
-    font-size: 1.5rem;
-    text-align: center;
-  }
+    img {
+        height: 100px;
+        width: 100px;
+    }
 
-  #msg {
-    font-size: 1rem;
-    padding: 0.5rem;
-  }
-}
+    #msg {
+        font-size: 1.5rem;
+        padding: 0.75rem;
+    }
 
-/* Improve layout on tablets */
-@media (min-width: 601px) and (max-width: 900px) {
-  h1 {
-    font-size: 2rem;
-  }
+    .score-board {
+        font-size: 1.5rem;
+        gap: 2rem;
+    }
 
-  .choice img {
-    max-width: 80px;
-  }
+    #user-score,
+    #comp-score {
+        font-size: 3rem;
+    }
 }
